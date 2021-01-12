@@ -18,15 +18,15 @@ export class App extends React.Component {
   return (
     <div id="drum-machine">
       <div id="display">
-        <Instrumento instrumento = "boom" letra = "Q" sonido = {boom} />
-        <Instrumento instrumento = "clap" letra = "W" sonido = {clap} />
-        <Instrumento instrumento = "hihat" letra = "E" sonido = {hihat} />
-        <Instrumento instrumento = "kick" letra = "A" sonido = {kick} />
-        <Instrumento instrumento = "openhat" letra = "S" sonido = {openhat} />
-        <Instrumento instrumento = "ride" letra = "D" sonido = {ride} />
-        <Instrumento instrumento = "snare" letra = "Z" sonido = {snare} />
-        <Instrumento instrumento = "tink" letra = "X" sonido = {tink} />
-        <Instrumento instrumento = "tom" letra = "C" sonido = {tom} />
+        <Instrumento codigo = "81" instrumento = "boom" letra = "Q" sonido = {boom} />
+        <Instrumento codigo = "87" instrumento = "clap" letra = "W" sonido = {clap} />
+        <Instrumento codigo = "69" instrumento = "hihat" letra = "E" sonido = {hihat} />
+        <Instrumento codigo = "65" instrumento = "kick" letra = "A" sonido = {kick} />
+        <Instrumento codigo = "83" instrumento = "openhat" letra = "S" sonido = {openhat} />
+        <Instrumento codigo = "68" instrumento = "ride" letra = "D" sonido = {ride} />
+        <Instrumento codigo = "90" instrumento = "snare" letra = "Z" sonido = {snare} />
+        <Instrumento codigo = "88" instrumento = "tink" letra = "X" sonido = {tink} />
+        <Instrumento codigo = "67" instrumento = "tom" letra = "C" sonido = {tom} />
 
 
 

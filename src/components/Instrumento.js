@@ -7,21 +7,18 @@ export default class Instrumento extends Component {
     super(props);
     this.state = { letra: props.letra,
     mostrar: false,
-    instrumento: props.instrumento };
+    instrumento: props.instrumento,
+    codigo: +props.codigo };
 
 }
 
 
   render() {
-    const srcaudio = this.props.instrumento
-    console.log(srcaudio)
     return (
-      <div onClick={this.reproducirSonido.bind(this)} onKeyDown={this.reproducirSonidoLetra.bind(this)} className="drum-pad" tabIndex={0} >
+      <div onClick={this.reproducirSonido.bind(this)} onKeyDown={this.reproducirSonidoLetra.bind(this)} id={this.props.instrumento} className="drum-pad" tabIndex={0} >
         <p>{this.props.letra}</p>
         {this.state.show && <p>{this.props.instrumento}</p>}
-        <audio id={this.props.letra} className="clip">
-          <source src={this.props.sonido} > 
-          </source>
+        <audio id={this.props.letra} className="clip" src={this.props.sonido}>
         </audio>
       </div>
     );
@@ -36,11 +33,13 @@ export default class Instrumento extends Component {
   }
 
   reproducirSonidoLetra = (e) => {
+    const {show} = this.state;
     const letra = this.state.letra;
-    e.persist()
-    if (e.keyCode === 81) { //relativizar el keycode*******!!!
+    if (e.keyCode === this.state.codigo) { 
     const instrumentoASonar = document.getElementById(`${letra}`);
     instrumentoASonar.play()
+    this.setState({show: !show })
+
     }
   }
 
