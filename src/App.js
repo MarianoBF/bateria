@@ -17,7 +17,9 @@ export class App extends React.Component {
   render() {
   return (
     <div id="drum-machine">
-      <div id="display">
+      <h1>Batería: hacé clic o tocá la tecla para hacer sonar el instrumento</h1>
+
+      <div className="displayBateria" id="display">
         <Instrumento codigo = "81" instrumento = "boom" letra = "Q" sonido = {boom} />
         <Instrumento codigo = "87" instrumento = "clap" letra = "W" sonido = {clap} />
         <Instrumento codigo = "69" instrumento = "hihat" letra = "E" sonido = {hihat} />
@@ -27,11 +29,8 @@ export class App extends React.Component {
         <Instrumento codigo = "90" instrumento = "snare" letra = "Z" sonido = {snare} />
         <Instrumento codigo = "88" instrumento = "tink" letra = "X" sonido = {tink} />
         <Instrumento codigo = "67" instrumento = "tom" letra = "C" sonido = {tom} />
-
-
-
-    </div>
       </div>
+    </div>
   );
 }
 }
