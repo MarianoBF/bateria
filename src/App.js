@@ -14,6 +14,32 @@ import tom from "./components/audio/tom.wav";
 
 
 export class App extends React.Component {
+
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.reproducirSonidoLetra, false);
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.reproducirSonidoLetra, false);
+  }
+
+  reproducirSonidoLetra = (e) => {
+
+    const INSTRUMENTOS = ["Q","W","E","A","S","D","Z","X","C" ]
+
+    // const show = this.state.mostrar;
+    const letra = e.key.toUpperCase();
+
+    if (INSTRUMENTOS.includes(letra)) { 
+    const instrumentoASonar = document.getElementById(`${letra}`);
+    instrumentoASonar.play()
+    // this.setState({mostrar: !show })
+
+    }
+  }
+
+
   render() {
   return (
     <div id="drum-machine">
