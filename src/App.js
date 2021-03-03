@@ -59,6 +59,7 @@ export class App extends React.Component {
         <Instrumento codigo = "88" instrumento = "tink" letra = "X" sonido = {tink} mostrar={this.state.mostrar} />
         <Instrumento codigo = "67" instrumento = "tom" letra = "C" sonido = {tom} mostrar={this.state.mostrar} />
       </div>
+      <p class="creditos">Fondo: <span>Photo by <a href="https://unsplash.com/@freestocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">freestocks</a> on <a href="https://unsplash.com/s/photos/drum?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
     </div>
   );
 }
