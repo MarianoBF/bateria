@@ -1,15 +1,15 @@
 import './App.css';
 import Instrumento from './components/Instrumento';
 import React from "react";
-import boom from "./components/audio/boom.wav";
-import clap from "./components/audio/clap.wav";
-import hihat from "./components/audio/hihat.wav";
-import kick from "./components/audio/kick.wav";
-import openhat from "./components/audio/openhat.wav";
-import ride from "./components/audio/ride.wav";
-import snare from "./components/audio/snare.wav";
-import tink from "./components/audio/tink.wav";
-import tom from "./components/audio/tom.wav";
+import boom from "./assets/boom.wav";
+import clap from "./assets/clap.wav";
+import hihat from "./assets/hihat.wav";
+import kick from "./assets/kick.wav";
+import openhat from "./assets/openhat.wav";
+import ride from "./assets/ride.wav";
+import snare from "./assets/snare.wav";
+import tink from "./assets/tink.wav";
+import tom from "./assets/tom.wav";
 
 export class App extends React.Component {
   constructor(props) {
