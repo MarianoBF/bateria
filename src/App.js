@@ -16,6 +16,22 @@ export class App extends React.Component {
     super(props);
     this.state = {
       mostrar: "",
+      cancion: "",
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.playSong = this.playSong.bind(this);
+  }
+
+  handleChange(event) {
+    event.stopPropagation();
+    this.setState({cancion: event.target.value});
+  }
+
+  playSong(event) {
+    event.preventDefault();
+    for (let letra of this.state.cancion) {
+      console.log("letra", letra)
+      this.reproducirSonidoLetra({key: letra})
     }
   }
 
@@ -59,7 +75,12 @@ export class App extends React.Component {
         <Instrumento codigo = "88" instrumento = "tink" letra = "X" sonido = {tink} mostrar={this.state.mostrar} />
         <Instrumento codigo = "67" instrumento = "tom" letra = "C" sonido = {tom} mostrar={this.state.mostrar} />
       </div>
-      <p class="creditos">Fondo: <span>Photo by <a href="https://unsplash.com/@freestocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">freestocks</a> on <a href="https://unsplash.com/s/photos/drum?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
+
+      <form onSubmit={this.playSong}>
+        <input type="text" value={this.state.cancion} onChange={this.handleChange} />
+        <button type="submit">Tocar canción {this.state.cancion}</button>
+      </form>
+      <p className="creditos">Fondo: <span>Photo by <a href="https://unsplash.com/@freestocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">freestocks</a> on <a href="https://unsplash.com/s/photos/drum?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
     </div>
   );
 }
