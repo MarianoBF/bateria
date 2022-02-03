@@ -31,6 +31,14 @@ h1 {
   justify-content: center;
 }
 
+.songContainer {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.songContainer input, button {
+  font-size: larger;
+}
 
 
 .creditos {

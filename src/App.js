@@ -23,15 +23,16 @@ export class App extends React.Component {
   }
 
   handleChange(event) {
-    event.stopPropagation();
     this.setState({cancion: event.target.value});
   }
 
-  playSong(event) {
+  async playSong(event) {
     event.preventDefault();
+
+    const timer = ms => new Promise(res => setTimeout(res, ms))
     for (let letra of this.state.cancion) {
-      console.log("letra", letra)
       this.reproducirSonidoLetra({key: letra})
+      await timer(1000)
     }
   }
 
@@ -76,10 +77,13 @@ export class App extends React.Component {
         <Instrumento codigo = "67" instrumento = "tom" letra = "C" sonido = {tom} mostrar={this.state.mostrar} />
       </div>
 
-      <form onSubmit={this.playSong}>
-        <input type="text" value={this.state.cancion} onChange={this.handleChange} />
-        <button type="submit">Tocar canción {this.state.cancion}</button>
-      </form>
+      <div className='songContainer'>
+        <h3>En este campo podés escribir una combinación de sonidos (poniendo la letra del recuadro) y presionar "tocar" para que se reproduzca.</h3>
+        <form onSubmit={this.playSong}>
+          <input type="text" value={this.state.cancion} onChange={this.handleChange} maxLength={100}/>
+          <button type="submit">Tocar</button>
+        </form>
+      </div>
       <p className="creditos">Fondo: <span>Photo by <a href="https://unsplash.com/@freestocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">freestocks</a> on <a href="https://unsplash.com/s/photos/drum?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
     </div>
   );
