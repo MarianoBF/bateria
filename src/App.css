@@ -40,10 +40,22 @@ h1 {
   font-size: larger;
 }
 
+input {
+  margin: 10px;
+}
+
+.separation {
+  width: 50px
+}
 
 .creditos {
   position: absolute;
   bottom: 0;
   left: 0;
   font-size: 9px;
+}
+
+.playerNotice {
+  max-width: 700px;
+  margin: 20px auto;
 }

@@ -17,12 +17,14 @@ export class App extends React.Component {
     this.state = {
       mostrar: "",
       cancion: "",
+      separacion: "",
     }
     this.handleChange = this.handleChange.bind(this);
     this.playSong = this.playSong.bind(this);
   }
 
   handleChange(event) {
+    console.log(event)
     this.setState({cancion: event.target.value});
   }
 
@@ -78,9 +80,15 @@ export class App extends React.Component {
       </div>
 
       <div className='songContainer'>
-        <h3>En este campo podés escribir una combinación de sonidos (poniendo la letra del recuadro) y presionar "tocar" para que se reproduzca.</h3>
+        <h3 className="playerNotice">En este campo podés escribir una combinación de sonidos (poniendo la letra del recuadro)
+        y elegir el tiempo que debe separar los sonidos. Luego presioná "tocar" para que se reproduzca.</h3>
         <form onSubmit={this.playSong}>
-          <input type="text" value={this.state.cancion} onChange={this.handleChange} maxLength={100}/>
+          <label>Instrumentos
+            <input type="text" value={this.state.cancion} onChange={this.handleChange} maxLength={100}/>
+          </label>
+          <label>Separación
+            <input className="separation" type="number" value={this.state.separacion} maxLength={2}/>
+          </label>
           <button type="submit">Tocar</button>
         </form>
       </div>
