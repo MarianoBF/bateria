@@ -17,25 +17,26 @@ export class App extends React.Component {
     this.state = {
       mostrar: "",
       cancion: "",
-      separacion: "",
+      separation: "",
+      disabled: false,
     }
     this.handleChange = this.handleChange.bind(this);
     this.playSong = this.playSong.bind(this);
   }
 
   handleChange(event) {
-    console.log(event)
-    this.setState({cancion: event.target.value});
+    this.setState({[event.target.name]: event.target.value});
   }
 
   async playSong(event) {
     event.preventDefault();
-
+    this.setState({disabled: true})
     const timer = ms => new Promise(res => setTimeout(res, ms))
     for (let letra of this.state.cancion) {
       this.reproducirSonidoLetra({key: letra})
-      await timer(1000)
+      await timer(this.state.separation * 1000)
     }
+    this.setState({disabled: false})
   }
 
   componentDidMount() {
@@ -81,15 +82,15 @@ export class App extends React.Component {
 
       <div className='songContainer'>
         <h3 className="playerNotice">En este campo podés escribir una combinación de sonidos (poniendo la letra del recuadro)
-        y elegir el tiempo que debe separar los sonidos. Luego presioná "tocar" para que se reproduzca.</h3>
+        y elegir el tiempo que debe separar los sonidos (en segundos). Luego presioná "tocar" para que se reproduzca.</h3>
         <form onSubmit={this.playSong}>
           <label>Instrumentos
-            <input type="text" value={this.state.cancion} onChange={this.handleChange} maxLength={100}/>
+            <input disabled={this.state.disabled} name="cancion" type="text" value={this.state.cancion} onChange={this.handleChange} maxLength={100}/>
           </label>
           <label>Separación
-            <input className="separation" type="number" value={this.state.separacion} maxLength={2}/>
+            <input disabled={this.state.disabled} name="separation" className="separation" type="number" onChange={this.handleChange} value={this.state.separation} maxLength={2}/>
           </label>
-          <button type="submit">Tocar</button>
+          <button disabled={this.state.disabled} type="submit">Tocar</button>
         </form>
       </div>
       <p className="creditos">Fondo: <span>Photo by <a href="https://unsplash.com/@freestocks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">freestocks</a> on <a href="https://unsplash.com/s/photos/drum?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>
