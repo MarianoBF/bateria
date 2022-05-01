@@ -1,30 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.9bb473fa.chunk.css",
-    "main.js": "./static/js/main.bdb57376.chunk.js",
-    "main.js.map": "./static/js/main.bdb57376.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.71b7da80.js",
-    "runtime-main.js.map": "./static/js/runtime-main.71b7da80.js.map",
-    "static/js/2.22a0de83.chunk.js": "./static/js/2.22a0de83.chunk.js",
-    "static/js/2.22a0de83.chunk.js.map": "./static/js/2.22a0de83.chunk.js.map",
+    "main.css": "./static/css/main.48f01a52.css",
+    "main.js": "./static/js/main.99b8ba32.js",
+    "static/media/fondo.jpg": "./static/media/fondo.67fa585a2b11fec24ced.jpg",
+    "static/media/ride.wav": "./static/media/ride.44e6385400f6b7c38f7c.wav",
+    "static/media/openhat.wav": "./static/media/openhat.482e523113fddc21f663.wav",
+    "static/media/boom.wav": "./static/media/boom.d89f41a5296c9cc8d21e.wav",
+    "static/media/tom.wav": "./static/media/tom.52db9c2303efd5360380.wav",
+    "static/media/clap.wav": "./static/media/clap.eb738e5291d099fc97b4.wav",
+    "static/media/hihat.wav": "./static/media/hihat.0273528cafd1985aa0e4.wav",
+    "static/media/snare.wav": "./static/media/snare.3aa3f94341c18d1e00d1.wav",
+    "static/media/kick.wav": "./static/media/kick.1d842c5565abcec54198.wav",
+    "static/media/tink.wav": "./static/media/tink.b78647d20bd56dc50c3e.wav",
     "index.html": "./index.html",
-    "static/css/main.9bb473fa.chunk.css.map": "./static/css/main.9bb473fa.chunk.css.map",
-    "static/js/2.22a0de83.chunk.js.LICENSE.txt": "./static/js/2.22a0de83.chunk.js.LICENSE.txt",
-    "static/media/boom.d89f41a5.wav": "./static/media/boom.d89f41a5.wav",
-    "static/media/clap.eb738e52.wav": "./static/media/clap.eb738e52.wav",
-    "static/media/index.css": "./static/media/fondo.67fa585a.jpg",
-    "static/media/hihat.0273528c.wav": "./static/media/hihat.0273528c.wav",
-    "static/media/kick.1d842c55.wav": "./static/media/kick.1d842c55.wav",
-    "static/media/openhat.482e5231.wav": "./static/media/openhat.482e5231.wav",
-    "static/media/ride.44e63854.wav": "./static/media/ride.44e63854.wav",
-    "static/media/snare.3aa3f943.wav": "./static/media/snare.3aa3f943.wav",
-    "static/media/tink.b78647d2.wav": "./static/media/tink.b78647d2.wav",
-    "static/media/tom.52db9c23.wav": "./static/media/tom.52db9c23.wav"
+    "main.48f01a52.css.map": "./static/css/main.48f01a52.css.map",
+    "main.99b8ba32.js.map": "./static/js/main.99b8ba32.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.71b7da80.js",
-    "static/js/2.22a0de83.chunk.js",
-    "static/css/main.9bb473fa.chunk.css",
-    "static/js/main.bdb57376.chunk.js"
+    "static/css/main.48f01a52.css",
+    "static/js/main.99b8ba32.js"
   ]
 }
