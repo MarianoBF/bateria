@@ -25,7 +25,13 @@ export class App extends React.Component {
   }
 
   handleChange(event) {
+    if (event.target.name === "cancion") {
+      if (["Q","W","E","A","S","D","Z","X","C"].includes(event.target.value.slice(-1).toUpperCase())) {
+      this.setState({[event.target.name]: event.target.value});
+      }
+    } else {
     this.setState({[event.target.name]: event.target.value});
+    }
   }
 
   async playSong(event) {
@@ -48,18 +54,19 @@ export class App extends React.Component {
   }
 
   reproducirSonidoLetra = (e) => {
+    if (e) {
+        const INSTRUMENTOS = ["Q","W","E","A","S","D","Z","X","C" ]
 
-    const INSTRUMENTOS = ["Q","W","E","A","S","D","Z","X","C" ]
+        // const show = this.state.mostrar;
+        const letra = e.key.toUpperCase();
 
-    // const show = this.state.mostrar;
-    const letra = e.key.toUpperCase();
-
-    if (INSTRUMENTOS.includes(letra)) { 
-    const instrumentoASonar = document.getElementById(`${letra}`);
-    instrumentoASonar.play()
-    this.setState({mostrar: letra })
-    setTimeout(()=>this.setState({mostrar: ""}),300)
-    }
+        if (INSTRUMENTOS.includes(letra)) { 
+        const instrumentoASonar = document.getElementById(`${letra}`);
+        instrumentoASonar.play()
+        this.setState({mostrar: letra })
+        setTimeout(()=>this.setState({mostrar: ""}),300)
+        }
+      }
   }
 
   render() {
