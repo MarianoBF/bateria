@@ -17,7 +17,7 @@ export class App extends React.Component {
     this.state = {
       mostrar: "",
       cancion: "",
-      separation: "",
+      separation: 1.5,
       disabled: false,
     }
     this.handleChange = this.handleChange.bind(this);
@@ -95,7 +95,7 @@ export class App extends React.Component {
             <input disabled={this.state.disabled} name="cancion" type="text" value={this.state.cancion} onChange={this.handleChange} maxLength={100}/>
           </label>
           <label>Separación
-            <input disabled={this.state.disabled} name="separation" className="separation" type="number" onChange={this.handleChange} value={this.state.separation} maxLength={2}/>
+            <input disabled={this.state.disabled} name="separation" className="separation" type="number" onChange={this.handleChange} value={this.state.separation} maxLength={2} step={0.1}/>
           </label>
           <button disabled={this.state.disabled} type="submit">Tocar</button>
         </form>
